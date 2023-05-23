@@ -19,5 +19,5 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/test', function() {
-    return 'it is working';
+    return 'it is workings';
 });
