@@ -11,9 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('shortcodes_category', function (Blueprint $table) {
+          $table->bigIncrements('id');
+          $table->string('name')->unqiue();
+          $table->text('description')->nullable();
+          $table->integer('position');
+          $table->timestamps();
         });
     }
 
@@ -22,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('shortcodes_category');
     }
 };
